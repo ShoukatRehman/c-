@@ -45,6 +45,7 @@
             this.lbl_Errors = new System.Windows.Forms.Label();
             this.lbl_lastoption = new System.Windows.Forms.Label();
             this.btn_History = new System.Windows.Forms.Button();
+            this.lbl_Events = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 176);
+            this.label2.Location = new System.Drawing.Point(210, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 1;
@@ -82,13 +83,15 @@
             this.txt_first.Name = "txt_first";
             this.txt_first.Size = new System.Drawing.Size(100, 20);
             this.txt_first.TabIndex = 1;
+            this.txt_first.Leave += new System.EventHandler(this.txt_first_Leave);
             // 
             // txt_second
             // 
-            this.txt_second.Location = new System.Drawing.Point(323, 176);
+            this.txt_second.Location = new System.Drawing.Point(323, 224);
             this.txt_second.Name = "txt_second";
             this.txt_second.Size = new System.Drawing.Size(100, 20);
-            this.txt_second.TabIndex = 2;
+            this.txt_second.TabIndex = 3;
+            this.txt_second.Leave += new System.EventHandler(this.txt_second_Leave);
             // 
             // txt_Answer
             // 
@@ -143,15 +146,17 @@
             this.cmb_Choices.Items.AddRange(new object[] {
             "Add",
             "Sub"});
-            this.cmb_Choices.Location = new System.Drawing.Point(323, 226);
+            this.cmb_Choices.Location = new System.Drawing.Point(323, 170);
             this.cmb_Choices.Name = "cmb_Choices";
             this.cmb_Choices.Size = new System.Drawing.Size(100, 21);
-            this.cmb_Choices.TabIndex = 3;
+            this.cmb_Choices.TabIndex = 2;
+            this.cmb_Choices.SelectedIndexChanged += new System.EventHandler(this.cmb_Choices_SelectedIndexChanged);
+            this.cmb_Choices.Leave += new System.EventHandler(this.cmb_Choices_Leave);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(210, 226);
+            this.label5.Location = new System.Drawing.Point(210, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 11;
@@ -191,16 +196,26 @@
             this.btn_History.Location = new System.Drawing.Point(474, 324);
             this.btn_History.Name = "btn_History";
             this.btn_History.Size = new System.Drawing.Size(75, 23);
-            this.btn_History.TabIndex = 15;
+            this.btn_History.TabIndex = 5;
             this.btn_History.Text = "History";
             this.btn_History.UseVisualStyleBackColor = true;
             this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
+            // 
+            // lbl_Events
+            // 
+            this.lbl_Events.AutoSize = true;
+            this.lbl_Events.Location = new System.Drawing.Point(217, 324);
+            this.lbl_Events.Name = "lbl_Events";
+            this.lbl_Events.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Events.TabIndex = 16;
+            this.lbl_Events.Text = "label6";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 453);
+            this.Controls.Add(this.lbl_Events);
             this.Controls.Add(this.btn_History);
             this.Controls.Add(this.lbl_lastoption);
             this.Controls.Add(this.lbl_Errors);
@@ -245,6 +260,7 @@
         private System.Windows.Forms.Label lbl_Errors;
         private System.Windows.Forms.Label lbl_lastoption;
         private System.Windows.Forms.Button btn_History;
+        private System.Windows.Forms.Label lbl_Events;
     }
 }
 

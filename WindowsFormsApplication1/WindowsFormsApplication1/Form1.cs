@@ -36,8 +36,8 @@ namespace WindowsFormsApplication1
             {
                 try
                 {
-                 HistoryMaintain=txt_Answer.Text = myCal.Add(Convert.ToInt32(txt_first.Text), Convert.ToInt32(txt_second.Text)).ToString();
-
+                 txt_Answer.Text = myCal.Add(Convert.ToInt32(txt_first.Text), Convert.ToInt32(txt_second.Text)).ToString();
+                 HistoryMaintain = lbl_Events.Text += "=" + txt_Answer.Text;
                 }
                 catch (Exception ee)
                 {
@@ -55,8 +55,8 @@ namespace WindowsFormsApplication1
                 try
                 {
                      
-                   HistoryMaintain= txt_Answer.Text = myCal.Sub(Convert.ToInt32(txt_first.Text), Convert.ToInt32(txt_second.Text)).ToString();
-
+                   txt_Answer.Text = myCal.Sub(Convert.ToInt32(txt_first.Text), Convert.ToInt32(txt_second.Text)).ToString();
+                   HistoryMaintain = lbl_Events.Text += "=" + txt_Answer.Text;
                 }
                 catch (Exception ee)
                 {
@@ -83,6 +83,43 @@ namespace WindowsFormsApplication1
         {
             History myHistory = new History();
             myHistory.LoadList(HistoryList);
+        }
+
+        private void txt_first_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_first.Text))
+            {
+                txt_first.Focus(); 
+            }
+            else
+            {
+                lbl_Events.Text += txt_first.Text;
+            }
+           
+        }
+
+        private void txt_second_Leave(object sender, EventArgs e)
+        {
+            lbl_Events.Text += txt_second.Text;
+        }
+
+        private void cmb_Choices_Leave(object sender, EventArgs e)
+        {
+            //lbl_Events.Text += cmb_Choices.Text;
+        }
+
+        private void cmb_Choices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_Choices.Text=="Add")
+            {
+                lbl_Events.Text += " + ";
+            }
+            else if (cmb_Choices.Text=="Sub")
+            {
+                lbl_Events.Text += " - ";
+
+            }
+            
         }
 
        
