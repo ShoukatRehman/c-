@@ -43,6 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btn_calul = new System.Windows.Forms.Button();
             this.lbl_Errors = new System.Windows.Forms.Label();
+            this.lbl_lastoption = new System.Windows.Forms.Label();
+            this.btn_History = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -175,11 +177,32 @@
             this.lbl_Errors.Size = new System.Drawing.Size(0, 13);
             this.lbl_Errors.TabIndex = 13;
             // 
+            // lbl_lastoption
+            // 
+            this.lbl_lastoption.AutoSize = true;
+            this.lbl_lastoption.Location = new System.Drawing.Point(43, 321);
+            this.lbl_lastoption.Name = "lbl_lastoption";
+            this.lbl_lastoption.Size = new System.Drawing.Size(74, 13);
+            this.lbl_lastoption.TabIndex = 14;
+            this.lbl_lastoption.Text = "Last operation";
+            // 
+            // btn_History
+            // 
+            this.btn_History.Location = new System.Drawing.Point(474, 324);
+            this.btn_History.Name = "btn_History";
+            this.btn_History.Size = new System.Drawing.Size(75, 23);
+            this.btn_History.TabIndex = 15;
+            this.btn_History.Text = "History";
+            this.btn_History.UseVisualStyleBackColor = true;
+            this.btn_History.Click += new System.EventHandler(this.btn_History_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 453);
+            this.Controls.Add(this.btn_History);
+            this.Controls.Add(this.lbl_lastoption);
             this.Controls.Add(this.lbl_Errors);
             this.Controls.Add(this.btn_calul);
             this.Controls.Add(this.label5);
@@ -220,6 +243,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_calul;
         private System.Windows.Forms.Label lbl_Errors;
+        private System.Windows.Forms.Label lbl_lastoption;
+        private System.Windows.Forms.Button btn_History;
     }
 }
 
