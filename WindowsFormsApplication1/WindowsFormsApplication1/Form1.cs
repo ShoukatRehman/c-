@@ -100,7 +100,15 @@ namespace WindowsFormsApplication1
 
         private void txt_second_Leave(object sender, EventArgs e)
         {
-            lbl_Events.Text += txt_second.Text;
+            if (string.IsNullOrEmpty(txt_second.Text))
+            {
+                txt_second.Focus();
+            }
+            else
+            {
+                lbl_Events.Text += txt_second.Text;
+            }
+            
         }
 
         private void cmb_Choices_Leave(object sender, EventArgs e)
