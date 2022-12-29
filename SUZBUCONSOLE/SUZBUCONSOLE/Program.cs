@@ -16,7 +16,7 @@ namespace SUZBUCONSOLE
 			abcd.ID = 933;
 			abcd.Mobile = "ouou";
 			abcd.ShowDetails(abcd);
-			
+
 
 
 			Console.ReadLine();
