@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SUZBUCONSOLE
 {
@@ -6,17 +7,14 @@ namespace SUZBUCONSOLE
 	{
 		static void Main(string[] args)
 		{
-			Student abcd = new Student();
-			abcd.Name = "SHOUKAT REHMAN";
-			abcd.ID = 0355;
-			abcd.Mobile = "032899";
-			abcd.ShowDetails(abcd);
+			List<Student> student = new List<Student>();
+			student.Add(new Student { ID = 123,Mobile="9324897",Name="Shoukat"});
+			student.Add(new Student { ID = 1233, Mobile = "932487", Name = "Rehman" });
 
-			abcd.Name = "akbar ali";
-			abcd.ID = 933;
-			abcd.Mobile = "ouou";
-			abcd.ShowDetails(abcd);
-
+			foreach (var item in student)
+			{
+				Console.WriteLine("The ID {0} Name is {1} Phone Number is {2}",item.ID,item.Name,item.Mobile);
+			}
 
 
 			Console.ReadLine();
