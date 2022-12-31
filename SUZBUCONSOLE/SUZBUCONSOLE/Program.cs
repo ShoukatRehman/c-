@@ -7,14 +7,23 @@ namespace SUZBUCONSOLE
 	{
 		static void Main(string[] args)
 		{
-			List<Student> student = new List<Student>();
-			student.Add(new Student { ID = 123,Mobile="9324897",Name="Shoukat"});
-			student.Add(new Student { ID = 1233, Mobile = "932487", Name = "Rehman" });
+			Car car=new Car();
+			car.Company = "Audi";
+			car.Model = "2020";
+			car.Name = "A8";
+			car.color = "Full Black";
+			car.Doors = 4;
+			car.NumberofSeats= 5;
 
-			foreach (var item in student)
-			{
-				Console.WriteLine("The ID {0} Name is {1} Phone Number is {2}",item.ID,item.Name,item.Mobile);
-			}
+			Console.WriteLine("The Name of the Car is {0}{1}\nThe Color of Car is {2}",car.Company,car.Name,car.color);
+			Console.WriteLine("Let's drive the Car");
+			Console.WriteLine(car.IncreaseSpeed());
+			Console.WriteLine(car.IncreaseSpeed());
+			car.Brake();
+			Console.WriteLine(car.IncreaseSpeed());
+
+			 
+			
 
 
 			Console.ReadLine();
