@@ -12,6 +12,7 @@ namespace DesktopApp
 {
 	public partial class Form1 : Form
 	{
+		Calculator myCal = new Calculator();
 		public Form1()
 		{
 			InitializeComponent();
@@ -19,24 +20,14 @@ namespace DesktopApp
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			int valueOne;
-			int valueTwo;
-
-			valueOne=Convert.ToInt32(txt_FirstValue.Text);
-			valueTwo=Convert.ToInt32(txt_SecondValue.Text);
-			int Sum=valueOne*valueTwo;
-			txt_Answer.Text = Sum.ToString();
+			txt_Answer.Text = myCal.Multiply(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
 		}
 
 		private void btn_Divide_Click(object sender, EventArgs e)
 		{
-			int valueOne;
-			int valueTwo;
+			txt_Answer.Text = myCal.Divide(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
 
-			valueOne = Convert.ToInt32(txt_FirstValue.Text);
-			valueTwo = Convert.ToInt32(txt_SecondValue.Text);
-			int Sum = valueOne / valueTwo;
-			txt_Answer.Text = Sum.ToString();
 		}
+
 	}
 }

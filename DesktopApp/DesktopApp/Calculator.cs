@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace DesktopApp
 {
-	internal class Calculator
+	public class Calculator
 	{
+		public int Multiply(int x, int y)
+		{
+			return x * y;
+		}
+		public int Divide(int x, int y)
+		{
+			return x / y;
+		}
 	}
 }
