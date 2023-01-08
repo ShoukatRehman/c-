@@ -17,17 +17,76 @@ namespace DesktopApp
 		{
 			InitializeComponent();
 		}
-
-		private void button1_Click(object sender, EventArgs e)
+		private void Clear()
 		{
-			txt_Answer.Text = myCal.Multiply(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
+			txt_FirstValue.Clear();
+			txt_SecondValue.Clear();
+			txt_Answer.Clear();
 		}
 
-		private void btn_Divide_Click(object sender, EventArgs e)
+		private void btn_calculate_Click(object sender, EventArgs e)
 		{
-			txt_Answer.Text = myCal.Divide(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
+			
+			if (cmb_Choice.Text=="Multiply")
+			{
+				try
+				{
+					txt_Answer.Text = myCal.Multiply(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
 
+				}
+				catch (Exception sr)
+				{
+					MessageBox.Show("Input is not invalid form","Errors",MessageBoxButtons.OK,MessageBoxIcon.Error);
+					//lbl_Errors.Text = "Invalid input by users";
+					Clear();
+				}
+			}
+			else if (cmb_Choice.Text=="Divide")
+			{
+				try
+				{
+					txt_Answer.Text = myCal.Divide(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
+
+				}
+				catch (Exception sr)
+				{
+					MessageBox.Show("Input is not invalid form", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+					//lbl_Errors.Text = "invalid";
+				}
+
+			}
+			else if (cmb_Choice.Text=="Addition")
+			{
+				try
+				{
+					txt_Answer.Text = myCal.Addition(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
+
+				}
+				catch (Exception sr)
+				{
+					MessageBox.Show("Input is not invalid form", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+					//lbl_Errors.Text = "invalid";
+				}
+			}
+			else if (cmb_Choice.Text == "Subtraction")
+			{
+				try
+				{
+					txt_Answer.Text = myCal.Subtraction(Convert.ToInt32(txt_FirstValue.Text), Convert.ToInt32(txt_SecondValue.Text)).ToString();
+
+				}
+				catch (Exception sr)
+				{
+					MessageBox.Show("Input is not invalid form", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+					//lbl_Errors.Text = "invalid";
+				}
+			}
+			txt_FirstValue.Clear();
+			txt_SecondValue.Clear();
+			txt_FirstValue.Focus();
 		}
-
 	}
 }
